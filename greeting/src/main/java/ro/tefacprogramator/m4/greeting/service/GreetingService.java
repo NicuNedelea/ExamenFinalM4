@@ -19,7 +19,13 @@ public class GreetingService {
         if (g1.getDescription().equals("") || g1.getPrice() == 0 || g1.getTypeID() == 0 || g1.getCategoryID() == 0){
             return false;
         }
-        return true;
+
+        Greeting saved = repo.save(g1);
+
+        if (saved != null) {
+            return true;
+        }
+        return false;
     }
 
     public Object getAll(){

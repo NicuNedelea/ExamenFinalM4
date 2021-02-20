@@ -16,4 +16,5 @@ public interface GreetingRepository extends JpaRepository<Greeting, Integer>{
 
      @Query(value = "SELECT * FROM Greeting;", nativeQuery = true)
     public List<Greeting> getAll();
+    
 }
